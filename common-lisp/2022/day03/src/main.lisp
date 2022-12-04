@@ -46,7 +46,10 @@
                                         :prefix (format nil "rucksacks is an implementation of the Advent of Code challenge Day 3 of 2022")
                                         :usage-of "rucksacks PATH-TO-INPUT-FILE")
                                        (opts:exit 1)))
-          (t                          (let* ((input-values (input-file (first args)))
+          (t                          (let* ((part1-input-values (input-file (first args)))
+                                             (part2-input-values (rucksacks/part2:input-file (first args)))
                                              (priority-score (reduce #'+
-                                                                     (mapcar #'filter-for-dups input-values))))
-                                        (format t "Rucksack priorities score: ~A~%" priority-score))))))
+                                                                     (mapcar #'filter-for-dups part1-input-values)))
+                                             (badge-score (rucksacks/part2:solve part2-input-values)))
+                                        (format t "Rucksack priorities score: ~A~%" priority-score)
+                                        (format t "Rucksack badges score: ~A~%" badge-score))))))
