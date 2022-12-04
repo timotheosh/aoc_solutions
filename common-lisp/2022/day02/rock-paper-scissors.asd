@@ -3,7 +3,8 @@
   :author "Tim Hawes"
   :license "MIT"
   :depends-on ("cl-ppcre"
-               "unix-opts")
+               "unix-opts"
+               "rock-paper-scissors/part2")
   :components ((:module "src"
                 :components
                 ((:file "main"))))
@@ -12,6 +13,14 @@
   :build-pathname "target/rock-paper-scissors"
   :entry-point "rock-paper-scissors:-main"
   :in-order-to ((test-op (test-op "rock-paper-scissors/tests"))))
+
+(defsystem "rock-paper-scissors/part2"
+  :version "0.1.0"
+  :author "Tim Hawes"
+  :license "MIT"
+  :components ((:module "src"
+                :components
+                ((:file "part2")))))
 
 (defsystem "rock-paper-scissors/tests"
   :author "Tim Hawes"

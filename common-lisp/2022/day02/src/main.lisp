@@ -1,6 +1,7 @@
 (defpackage rock-paper-scissors
   (:use :cl)
   (:export :-main))
+
 (in-package :rock-paper-scissors)
 
 (defvar rps/values
@@ -81,5 +82,7 @@
                                         :prefix (format nil "rock-paper-scissors is an implementation of the Advent of Code challenge Day 2 of 2022")
                                         :usage-of "rock-paper-scissors PATH-TO-INPUT-FILE")
                                        (opts:exit 1)))
-          (t                          (let ((input-values (load-input (first args))))
-                                        (format t "Total score: ~A~%" (reduce #'+ input-values)))))))
+          (t                          (let ((part1-input-values (load-input (first args)))
+                                            (part2-input-values (rock-paper-scissors/part2:load-input (first args))))
+                                        (format t "Part 1: Total score: ~A~%" (reduce #'+ part1-input-values))
+                                        (format t "Part 2: Total score: ~A~%" (reduce #'+ part2-input-values)))))))
