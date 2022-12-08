@@ -5,7 +5,7 @@
   :depends-on ("cl-project"
                "unix-opts"
                "cl-annot"
-               "memoize")
+               "fare-memoization")
   :components ((:module "src"
                 :components
                 ((:file "main"))))
