@@ -3,7 +3,9 @@
   :author "Tim Hawes"
   :license "MIT"
   :depends-on ("cl-project"
-               "unix-opts")
+               "unix-opts"
+               "cl-annot"
+               "memoize")
   :components ((:module "src"
                 :components
                 ((:file "main"))))
