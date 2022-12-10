@@ -5,3 +5,6 @@
 
 # Vi
 *.swp
+
+# Jetbrains
+.idea/
